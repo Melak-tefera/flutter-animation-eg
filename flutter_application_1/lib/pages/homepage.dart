@@ -16,6 +16,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     controller.repeat();
     super.initState();
   }
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
   bool expand=false;
   @override
   Widget build(BuildContext context) {
