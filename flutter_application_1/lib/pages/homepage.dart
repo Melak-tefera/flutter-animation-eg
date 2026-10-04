@@ -7,16 +7,22 @@ const HomePage({super.key});
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  @override
+  void initState() {
+    // TODO: implement initState
+    controller=AnimationController(vsync: this, duration: Duration(seconds: 1));
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-    body: Column(
-      children: [
-        
-      ],
-    ),
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Icon(Icons.notification_add, size: 90,),
+      ),
     );
   }
 }
