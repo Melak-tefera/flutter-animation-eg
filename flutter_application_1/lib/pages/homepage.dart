@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   void initState() {
     // TODO: implement initState
     controller=AnimationController(vsync: this, duration: Duration(seconds: 1));
+    controller.repeat();
     super.initState();
   }
   @override
@@ -20,8 +21,22 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: Icon(Icons.notification_add, size: 90,),
+      body: GestureDetector(
+        onTapDown: (details) {
+          controller.stop();
+        },
+        onTapUp: (details) {
+          controller.repeat();
+        },
+        child: Center(
+          child: RotationTransition(
+            alignment: Alignment.center,
+            turns: controller,
+        
+        
+            child: Icon(Icons.notification_add, size: 90, color: Colors.white,)
+            ),
+        ),
       ),
     );
   }
