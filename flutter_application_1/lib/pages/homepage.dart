@@ -6,7 +6,11 @@ const HomePage({super.key});
   Widget build(BuildContext context) {
 
     return Scaffold(
-    
+    body: Column(
+      children: [
+        
+      ],
+    ),
     );
   }
 }
