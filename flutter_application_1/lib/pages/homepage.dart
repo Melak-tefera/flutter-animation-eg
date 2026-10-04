@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 width: expand? 200:100,
                 decoration: BoxDecoration(
                   color: expand? Colors.white:Colors.amber,
-                  borderRadius: BorderRadius.circular(10)
+                  borderRadius:expand? BorderRadius.circular(20):BorderRadius.circular(10)
                 ),
                 ),
             ),
