@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Homepage2()
+      home:AnimationDemoPage(),
      // home: HomePage(), // homepage that teachs animation controller and  implicit animation in container
     );
   }

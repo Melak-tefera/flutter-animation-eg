@@ -1,83 +1,78 @@
 import 'package:flutter/material.dart';
-
-class Homepage2 extends StatefulWidget {
-  const Homepage2({super.key});
+class AnimationDemoPage extends StatefulWidget {
+  const AnimationDemoPage({super.key});
 
   @override
-  State<Homepage2> createState() => _Homepage2State();
+  State<AnimationDemoPage> createState() => _AnimationDemoPageState();
 }
 
-class _Homepage2State extends State<Homepage2>
-    with SingleTickerProviderStateMixin {
-  late Animation<double> animation;
-  late AnimationController controller;
-  bool expanded = false;
+class _AnimationDemoPageState extends State<AnimationDemoPage>with SingleTickerProviderStateMixin {
+
+  late final AnimationController controller;
+  late final Animation<double> sizeAnimation;
 
   @override
   void initState() {
     super.initState();
+
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(seconds: 1),
     );
 
-    animation = Tween<double>(begin: 100, end: 300).animate(
-      CurvedAnimation(parent: controller, curve: Curves.easeIn),
+    sizeAnimation = Tween<double>(
+      begin: 100,
+      end: 300,
+    ).animate(
+      CurvedAnimation(
+        parent: controller,
+        curve: Curves.easeOut,
+      ),
     );
-
   }
-
-  void fun1() {
-    setState(() {
-      expanded = !expanded;
-    });
-    if (expanded) {
-      controller.forward();
-    } else {
-      controller.reverse();
-    }
-  }
-
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
 
+  void toggleAnimation() {
+    if (controller.isCompleted) {
+      controller.reverse();
+    } else {
+      controller.forward();
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(child: const Text('Explicit Animation')),
+      ),
       body: Center(
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          height: 300,
-          width: 300,
-          decoration: BoxDecoration(
-            color: Colors.amberAccent,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: GestureDetector(
-            onTap: fun1,
-            child: AnimatedBuilder(
-              animation: animation,
-              child: Container(
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              builder: (context, child) {
-                return Transform.scale(
-                  scaleX: animation.value,
-                  scaleY: animation.value,
-                );
-                
-              },
+        child: AnimatedBuilder(
+          animation: sizeAnimation,
+          builder: (context, child) {
+            return Container(
+              width: sizeAnimation.value,
+              height: sizeAnimation.value,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: child,
+            );
+          },
+          child: const Center(
+            child: Icon(
+              Icons.flutter_dash,
+              size: 50,
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: toggleAnimation,
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }
