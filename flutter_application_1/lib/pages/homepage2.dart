@@ -57,6 +57,7 @@ class _AnimationDemoPageState extends State<AnimationDemoPage>with SingleTickerP
               width: sizeAnimation.value,
               height: sizeAnimation.value,
               decoration: BoxDecoration(
+                color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: child,
@@ -65,6 +66,7 @@ class _AnimationDemoPageState extends State<AnimationDemoPage>with SingleTickerP
           child: const Center(
             child: Icon(
               Icons.flutter_dash,
+              color: Colors.white,
               size: 50,
             ),
           ),
