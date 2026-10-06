@@ -8,8 +8,8 @@ const HomePage({super.key});
 }
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
-  late AnimationController controller;
-  @override
+  late AnimationController controller; // animation controller
+  @override// initialzing controller should see all that is below
   void initState() {
     // TODO: implement initState
     controller=AnimationController(vsync: this, duration: Duration(seconds: 1));
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     controller.dispose();
     super.dispose();
   }
-  bool expand=false;
+  bool expand=false; // init  the process of making the animation if expanded is false do this if ont do that
   @override
   Widget build(BuildContext context) {
 
@@ -48,17 +48,18 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ),
             ),
           ),
+          // below is the an implicit animation
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  expand=!expand;
+                  expand=!expand; // on tap if expanded is false then do it true
                 });
               },
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 400),
-                height: expand? 200: 100,
+                height: expand? 200: 100,// if true 200 otherwise 100
                 width: expand? 200:100,
                 decoration: BoxDecoration(
                   color: expand? Colors.white:Colors.amber,
