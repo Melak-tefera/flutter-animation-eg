@@ -71,7 +71,17 @@ class _PhonenumberState extends State<Phonenumber> {
     body: ListView.builder(
       itemCount: callhistory.length,
       itemBuilder: (context, index){
-        return;
+        final item = callhistory[index];
+        return ListTile(
+          leading: Icon(Icons.account_circle_rounded),
+          title: Text(item["name"].toString()),
+          subtitle:Text(item["phono"].toString()) ,
+          trailing: CircleAvatar(
+            radius: 12,
+            backgroundColor: Colors.green,
+            child: Text(item["unread"].toString()),
+          ),
+        ) ;
       },
     ),
 
