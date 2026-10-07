@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/pages/homepage2.dart';
 import 'package:flutter_application_1/pages/homepage3.dart';
+import 'package:flutter_application_1/pages/homepage4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ExplicitTweenBuilder(),
+      home: HeroAnimation(),
+      // home: ExplicitTweenBuilder(),
      // home:AnimationDemoPage(),
      // home: HomePage(), // homepage that teachs animation controller and  implicit animation in container
     );
