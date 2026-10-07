@@ -17,36 +17,41 @@ class _OtheranimationState extends State<Otheranimation> {
         title: const Center(child: Text('Animation')),
       ),
       body: Center(
-        // Constrain height so ListWheelScrollView works correctly
+        // Give the wheel a fixed height
         child: SizedBox(
-          height: 300, // adjust as needed
-          child: ListWheelScrollView(
-            itemExtent: 60, // each item height; adjust to fit your design
+          height: 250, // total visible height of the wheel
+          child: ListWheelScrollView.useDelegate(
+            itemExtent: 50, // height of each item (must be consistent)
             physics: const FixedExtentScrollPhysics(),
-            children: arrIndex
-                .map((e) => Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 8.0,
-                      ),
-                      child: Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(21),
+            diameterRatio: 1.5, // controls curvature; adjust if you like
+            childDelegate: ListWheelChildBuilderDelegate(
+              childCount: arrIndex.length,
+              builder: (context, index) {
+                final e = arrIndex[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 4.0,
+                  ),
+                  child: Container(
+                    // Don't force a height here; let itemExtent control it
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(21),
+                    ),
+                    child: Center(
+                      child: Text(
+                        '$e',
+                        style: const TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
                         ),
-                        child: Center(
-                          child: Text(
-                            '$e',
-                            style: const TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
                       ),
-                    ))
-                .toList(),
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),
