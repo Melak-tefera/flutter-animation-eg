@@ -4,6 +4,7 @@ import 'package:flutter_application_1/pages/homepage2.dart';
 import 'package:flutter_application_1/pages/homepage3.dart';
 import 'package:flutter_application_1/pages/homepage4.dart';
 import 'package:flutter_application_1/pages/homepage5.dart';
+import 'package:flutter_application_1/pages/homepage6.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Otheranimation(),
+      home: Phonenumber(),
+      // home: Otheranimation(),
      // home: HeroAnimation(),
       // home: ExplicitTweenBuilder(),
      // home:AnimationDemoPage(),
