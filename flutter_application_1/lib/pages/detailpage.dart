@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// a good example for hero.  listview, column, and other bounded constraints should be inside a hero if doing hero animation 
 class Detailpage extends StatefulWidget {
   const Detailpage({super.key});
 
@@ -14,12 +14,12 @@ class _DetailpageState extends State<Detailpage> {
       appBar: AppBar(
         title: const Center(child: Text('Hero Animation')),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Material(
-          color: Colors.transparent,
-          child: Hero(
-            tag: "hero",
+      body: Hero(
+        tag: "hero",
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: Material(
+            color: Colors.transparent,
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -33,9 +33,9 @@ class _DetailpageState extends State<Detailpage> {
                       fit: BoxFit.cover, // usually looks better than fill
                     ),
                   ),
-          
+                      
                   const SizedBox(height: 10),
-          
+                      
                   // Description text
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8),
