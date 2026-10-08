@@ -6,6 +6,7 @@ import 'package:flutter_application_1/pages/homepage4.dart';
 import 'package:flutter_application_1/pages/homepage5.dart';
 import 'package:flutter_application_1/pages/homepage6.dart';
 import 'package:flutter_application_1/pages/homepage7.dart';
+import 'package:flutter_application_1/pages/responsive2/responsive2.dart';
 import 'package:flutter_application_1/pages/responsive_design/homepae.dart';
 
 void main() {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.deepPurple,
           foregroundColor: Colors.white, // title and icons
       ),),
-      home: Homepage8(),
+      home: Responsive2(mobileview: mobileview, tabletview: tabletview, desctopview: desctopview),
+      //home: Homepage8(),
       //home: Tweenanimation2(),
       //home: Phonenumber(),
       // home: Otheranimation(),
