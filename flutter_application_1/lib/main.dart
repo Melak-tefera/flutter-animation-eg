@@ -20,6 +20,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.deepPurple, 
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.deepPurple,
+          foregroundColor: Colors.white, // title and icons
+      ),),
       home: Homepage8(),
       //home: Tweenanimation2(),
       //home: Phonenumber(),
