@@ -6,6 +6,12 @@ var appbar= AppBar(
 
 var drawer= Drawer(
         backgroundColor: Colors.grey[900],
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(0),
+            bottomRight: Radius.circular(0),
+    ),
+  ),
         child: Column(
           children: [
             DrawerHeader(child: Icon(
