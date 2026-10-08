@@ -19,7 +19,19 @@ class _MobileViewState extends State<TabletView> {
       drawer: drawer,
       body: Column(
         children: [
-          Mybox(),
+          AspectRatio(
+            aspectRatio: 1,
+            child: SizedBox(
+              width: double.infinity,
+              child: GridView.builder(
+                itemCount: 4,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                itemBuilder: (context , index){
+                  return Mybox();
+                }
+              ),
+            ),
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: 40,
