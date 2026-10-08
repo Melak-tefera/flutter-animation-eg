@@ -250,6 +250,6 @@ Add a license before publishing the project for reuse. The MIT License is a comm
 
 ## Author
 
-**Meleak Tefera**
+**Melak Tefera**
 
 Flutter and Dart learner focused on practical mobile application development, UI experimentation, and responsive design.
