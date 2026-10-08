@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/responsive2/common/commonthings.dart';
 
 class DesctopView extends StatefulWidget {
 const DesctopView({super.key});
@@ -12,7 +13,10 @@ class _DesctopViewState extends State<DesctopView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-    
+    appBar: appbar,
+    body: Row(children: [
+      drawer,
+    ],),
     );
   }
 }
