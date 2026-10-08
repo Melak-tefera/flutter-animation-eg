@@ -6,7 +6,6 @@ var appbar= AppBar(
 
 var drawer= Drawer(
         backgroundColor: Colors.grey[900],
-        elevation: 3,
         child: Column(
           children: [
             DrawerHeader(child: Icon(

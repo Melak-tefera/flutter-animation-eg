@@ -13,6 +13,7 @@ class _DesctopViewState extends State<DesctopView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Colors.grey[300],
     appBar: appbar,
     body: Row(children: [
       drawer,

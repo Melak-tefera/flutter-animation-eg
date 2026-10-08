@@ -15,17 +15,18 @@ class _MobileViewState extends State<TabletView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: appbar,
       drawer: drawer,
       body: Column(
         children: [
           AspectRatio(
-            aspectRatio: 1,
+            aspectRatio: 4,
             child: SizedBox(
               width: double.infinity,
               child: GridView.builder(
                 itemCount: 4,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4), 
                 itemBuilder: (context , index){
                   return Mybox();
                 }
