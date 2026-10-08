@@ -6,7 +6,9 @@ const Desctopbody({super.key});
   Widget build(BuildContext context) {
 
     return Scaffold(
-    appBar: AppBar(title: Center(child: Text('Desctop body'))),
+      backgroundColor: Colors.deepPurple[200],
+      appBar: AppBar(title: Center(child: Text('Desctop body'))),
+      
 
     
     );
