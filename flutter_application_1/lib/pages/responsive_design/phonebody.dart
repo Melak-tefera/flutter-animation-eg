@@ -7,7 +7,7 @@ const Phonebody({super.key});
 
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
-      appBar: AppBar(title: Center(child: Text('Phone body'))),
+      appBar: AppBar(title: Center(child: Text('P H O N E'))),
       body: Column(
         children: [
           // youtube video
