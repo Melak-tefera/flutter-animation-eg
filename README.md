@@ -1,5 +1,4 @@
 # flutter-animation-eg
-<<<<<<< HEAD
 =======
 # Flutter Animation & Responsive UI Playground
 
@@ -255,4 +254,3 @@ Add a license before publishing the project for reuse. The MIT License is a comm
 **Melak Tefera**
 
 Flutter and Dart learner focused on practical mobile application development, UI experimentation, and responsive design.
->>>>>>> origin/main
