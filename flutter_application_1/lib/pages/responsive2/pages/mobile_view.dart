@@ -20,10 +20,22 @@ class _MobileViewState extends State<MobileView> {
       drawer: drawer,
       body:Column(
         children: [
-          Mybox(),
+          AspectRatio(
+            aspectRatio: 1,
+            child: SizedBox(
+              width: double.infinity,
+              child: GridView.builder(
+                itemCount: 4,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                itemBuilder: (context , index){
+                  return Mybox();
+                }
+              ),
+            ),
+          ),
           Expanded(
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 40,
               itemBuilder: (context, index){
                 return Mytile();
               }
